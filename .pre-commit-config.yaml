@@ -10,10 +10,10 @@ repos:
           --ignore-init-module-imports,
           --ignore-pass-statements
         ]
-  - repo: https://github.com/psf/black
-    rev: 24.4.2
+  - repo: https://github.com/pycqa/isort
+    rev: 5.12.0
     hooks:
-      - id: black
+      - id: isort
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.8.4
     hooks:
