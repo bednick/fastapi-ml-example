@@ -1,0 +1,22 @@
+[project]
+name = "fastapi-ml-example"
+version = "0.1.0"
+description = "Example use ml models in fastapi application"
+readme = "README.md"
+authors = [{name = "Bedarev Nikolay", email = ""}]
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115.6",
+    "pydantic>=2.10.4",
+    "pydantic-settings>=2.7.0",
+    "uvicorn>=0.34.0",
+    "uvloop>=0.21.0 ; sys_platform == 'linux'",
+]
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.0.1",
+    "pytest-asyncio<0.22",
+    "pytest>=8.3.4",
+    "ruff>=0.8.4",
+]
