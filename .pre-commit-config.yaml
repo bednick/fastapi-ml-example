@@ -11,7 +11,7 @@ repos:
           --ignore-pass-statements
         ]
   - repo: https://github.com/pycqa/isort
-    rev: 5.12.0
+    rev: 6.0.1
     hooks:
       - id: isort
   - repo: https://github.com/astral-sh/ruff-pre-commit

@@ -4,12 +4,15 @@ version = "0.1.0"
 description = "Example use ml models in fastapi application"
 readme = "README.md"
 authors = [{name = "Bedarev Nikolay", email = ""}]
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 dependencies = [
-    "fastapi>=0.115.6",
-    "pydantic>=2.10.4",
-    "pydantic-settings>=2.7.0",
-    "uvicorn>=0.34.0",
+    "fastapi>=0.116.1",
+    "isort==6.0.1",
+    "orjson>=3.11.0",
+    "pydantic>=2.11.7",
+    "pydantic-core>=2.33.2",
+    "pydantic-settings>=2.10.1",
+    "uvicorn>=0.35.0",
     "uvloop>=0.21.0 ; sys_platform == 'linux'",
 ]
 
@@ -35,7 +38,7 @@ line-ending = "auto"
 docstring-code-format = false
 
 [tool.isort]
-py_version = 311
+py_version = 312
 profile = "black"
 src_paths = [ "fastapi_ml_example"]
 line_length = 119

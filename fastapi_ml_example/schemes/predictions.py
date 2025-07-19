@@ -2,8 +2,8 @@ import pydantic
 
 
 class PredictRequest(pydantic.BaseModel):
-    work_time: int = pydantic.Field(5)
+    batch: list[dict[str, float]]
 
 
 class PredictResponse(pydantic.BaseModel):
-    score: float
+    scores: list[float]

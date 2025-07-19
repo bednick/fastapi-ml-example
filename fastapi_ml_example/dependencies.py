@@ -1,10 +1,9 @@
-import contextlib
 import concurrent.futures
+import contextlib
 import logging
 from typing import AsyncIterator
 
 import fastapi
-
 
 from fastapi_ml_example import config
 
@@ -14,13 +13,10 @@ __all__ = ("lifespan", "get_settings", "get_executor")
 
 
 @contextlib.asynccontextmanager
-async def lifespan(
-    app: fastapi.FastAPI, settings: config.Settings
-) -> AsyncIterator[None]:
+async def lifespan(app: fastapi.FastAPI, settings: config.Settings) -> AsyncIterator[None]:
     app.state.settings = settings  # type: ignore
-    with concurrent.futures.ProcessPoolExecutor(
-        max_workers=settings.process_pool_executor_size
-    ) as executor:
+    logger.info(f"Start service with {settings=}")
+    with concurrent.futures.ProcessPoolExecutor(max_workers=settings.process_pool_executor_size) as executor:
         app.state.executor = executor  # type: ignore
         yield
 
